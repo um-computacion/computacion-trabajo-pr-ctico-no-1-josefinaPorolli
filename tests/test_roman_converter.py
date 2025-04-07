@@ -1,4 +1,11 @@
+
 import unittest
+
+# No detectaba la carpeta src
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.roman_converter import decimal_to_roman
 
 class TestRomanConverter(unittest.TestCase):
@@ -21,4 +28,5 @@ class TestRomanConverter(unittest.TestCase):
         self.assertEqual(decimal_to_roman(3999), "MMMCMXCIX")
 
 if __name__ == '__main__':
+    print("ejecutando")
     unittest.main()
